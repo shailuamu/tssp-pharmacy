@@ -61,32 +61,34 @@
         }
 
         .main-content {
-            height: calc(100vh - 100px);
-            position: relative;
-            overflow: hidden;
+            background-image: url(./view-medicine-big.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            /* position: relative; */
+            /* overflow: hidden; */
         }
 
         .fa-whatsapp {
             color: rgb(10, 223, 10);
         }
 
-        .main-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
 
         .hero-text {
-            position: absolute;
+            /* position: absolute;
             top: 30%;
-            left: 50%;
-            font-size: 2.8rem;
-            transform: translate(-50%, -50%);
+            left: 50%; */
+            font-size: 2.4rem;
             text-align: center;
             color: white;
             background-color: rgba(0, 0, 0, 0.6);
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 100px 0;
         }
 
         .location {
@@ -162,29 +164,13 @@
             text-decoration: underline;
         }
 
-        /* Add responsive styles */
-        @media screen and (max-width: 768px) {
-
-            .brand {
-                font-size: 1.8rem;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .brand {
-                font-size: 1.5rem;
-            }
-        }
-
         .services-overlay {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
+            /* position: absolute; */
             display: flex;
             justify-content: center;
             gap: 2rem;
             padding: 0 2rem;
+            flex-wrap: wrap;
         }
 
         .service-card {
@@ -193,11 +179,11 @@
             border-radius: 10px;
             text-align: center;
             width: 250px;
-            transition: transform 0.3s;
+            /* transition: transform 0.3s; */
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            /* transform: translateY(-5px); */
         }
 
         .service-card i {
@@ -216,17 +202,69 @@
             font-size: 0.9rem;
         }
 
+        /* Add responsive styles */
+
+        @media screen and (max-width: 480px) {
+            .brand {
+                font-size: 1.5rem;
+            }
+
+            .hero-text {
+                font-size: 1.5rem;
+            }
+
+            .header-content {
+                justify-content: center;
+            }
+
+            .location {
+                flex-direction: column;
+            }
+
+            .location .text {
+                width: 100%;
+            }
+
+            .location .map-container {
+                width: 100%;
+            }
+        }
+
         @media screen and (max-width: 768px) {
+
+            .hero-text {
+                font-size: 1.5rem;
+            }
+
+            .header-content {
+                justify-content: center;
+            }
+
+            .brand {
+                font-size: 1.8rem;
+            }
+
             .services-overlay {
                 flex-direction: column;
                 align-items: center;
                 bottom: 50%;
-                transform: translateY(50%);
             }
 
             .service-card {
                 width: 80%;
                 max-width: 300px;
+            }
+
+            .location {
+                flex-direction: column;
+            }
+
+            .location .text {
+                width: 100%;
+            }
+
+            .location .map-container {
+                width: 100%;
             }
         }
     </style>
@@ -237,11 +275,11 @@
     <header>
         <div class="header-content">
             <div class="contact">
-                <a href="tel:7276044157">
+                <a href="tel:7276064157">
                     <i class="fas fa-phone"></i>
-                    7276044157
+                    7276064157
                 </a>
-                <a href="https://wa.me/917276044157">
+                <a href="https://wa.me/917276064157">
                     <i class="fab fa-whatsapp"></i>
                     WhatsApp
                 </a>
@@ -251,9 +289,9 @@
 
     <main>
         <section class="main-content">
-            <img src="./view-medicine-big.jpg" alt="Image">
+            <!-- <img src="./view-medicine-big.jpg" alt="Image"> -->
             <div class="hero-text">
-                <h3>Tapadiya speciality pharmacy</h3>
+                <h3>Tapadia Super Speciality Pharma</h3>
             </div>
             <div class="services-overlay">
                 <div class="service-card">
@@ -278,19 +316,25 @@
                 </div>
             </div>
         </section>
-        <div class="location">
-            <div class="text">
-                <p><i class="fas fa-map-marker-alt"></i>Shop No 1, Shivaji Nagar</p>
-                <p>Near Shivaji Statue, Nanded, Maharashtra 431602</p>
-            </div>
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.6867650124397!2d77.31419067507661!3d19.169776982048843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd1d6895555555f%3A0x648a88c85ec45c0d!2sShivaji%20Statue%2C%20Shivaji%20Nagar%2C%20Nanded%2C%20Maharashtra%20431602!5e0!3m2!1sen!2sin!4v1709655149776!5m2!1sen!2sin"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
     </main>
+
+    <div class="location">
+        <div class="text">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>
+                Shop no-1, Jalna Road, Below savji cancer clinic
+            </p>
+            <p>Rokda Hanuman Colony, Mondha, Chhatrapati Sambhaji Nagar</p>
+            <p>Maharashtra 431001</p>
+        </div>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.1586900305647!2d75.335782!3d19.875519999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9876c9516caf%3A0x45c5f6dadc4866ac!2sTapadia%20Super%20Speciality%20Pharma!5e0!3m2!1sen!2sin!4v1745690167846!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-content">
@@ -301,11 +345,7 @@
                 <a href="#">Contact</a>
             </div>
             <div class="copyright">
-                &copy; 2024 Medicine Store. All rights reserved.
-            </div>
-            <div class="address">
-                123 Health Street, Medical District<br>
-                City, State 12345
+                &copy; 2025 Tapadia Super Speciality Pharma. All rights reserved.
             </div>
         </div>
     </footer>
