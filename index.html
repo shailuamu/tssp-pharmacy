@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicine Store</title>
+    <title>Tapadia Super Speciality Pharma</title>
     <style>
         * {
             margin: 0;
@@ -68,6 +68,8 @@
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
+            flex-wrap: wrap;
+            height: 95vh;
             flex-wrap: wrap;
             /* position: relative; */
             /* overflow: hidden; */
@@ -205,8 +207,13 @@
         /* Add responsive styles */
 
         @media screen and (max-width: 480px) {
+
             .brand {
                 font-size: 1.5rem;
+            }
+
+            .main-content {
+                flex-direction: column;
             }
 
             .hero-text {
@@ -231,6 +238,11 @@
         }
 
         @media screen and (max-width: 768px) {
+
+            .main-content {
+                flex-direction: column;
+                height: 100%;
+            }
 
             .hero-text {
                 font-size: 1.5rem;
