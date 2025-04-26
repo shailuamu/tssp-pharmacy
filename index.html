@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #9BC7F6;
+        }
+
+        header {
+            background-color: #2a5298;
+            color: white;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: flex-end
+        }
+
+        .brand {
+            font-size: 2.3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-family: ui-monospace;
+        }
+
+        .contact {
+            display: flex;
+            gap: 1rem;
+            align-items: end;
+        }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s;
+            padding-left: 1.5rem;
+        }
+
+        .contact a:hover {
+            transform: scale(1.1);
+        }
+
+        .contact i {
+            font-size: 1.2rem;
+        }
+
+        .main-content {
+            height: calc(100vh - 100px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fa-whatsapp {
+            color: rgb(10, 223, 10);
+        }
+
+        .main-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            font-size: 2.8rem;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .location {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .location .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .location .map-container {
+            text-align: center;
+            width: 50%;
+        }
+
+        .location i {
+            color: #e74c3c;
+            margin-right: 10px;
+        }
+
+        .location p {
+            margin: 5px 0;
+        }
+
+        .map-container {
+            margin-top: 10px;
+            width: 100%;
+            height: 200px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Add responsive styles */
+        @media screen and (max-width: 768px) {
+
+            .brand {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .brand {
+                font-size: 1.5rem;
+            }
+        }
+
+        .services-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #2a5298;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #2a5298;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .services-overlay {
+                flex-direction: column;
+                align-items: center;
+                bottom: 50%;
+                transform: translateY(50%);
+            }
+
+            .service-card {
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="contact">
+                <a href="tel:7276044157">
+                    <i class="fas fa-phone"></i>
+                    7276044157
+                </a>
+                <a href="https://wa.me/917276044157">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main-content">
+            <img src="./view-medicine-big.jpg" alt="Image">
+            <div class="hero-text">
+                <h3>Tapadiya speciality pharmacy</h3>
+            </div>
+            <div class="services-overlay">
+                <div class="service-card">
+                    <i class="fas fa-pills"></i>
+                    <h3>Prescription Medicines</h3>
+                    <p>Wide range of prescription medications available</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-kit-medical"></i>
+                    <h3>Surgical Products</h3>
+                    <p>Essential surgical supplies and equipment</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-notes-medical"></i>
+                    <h3>Healthcare Products</h3>
+                    <p>Quality healthcare and wellness products</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Home Delivery</h3>
+                    <p>Convenient doorstep delivery service</p>
+                </div>
+            </div>
+        </section>
+        <div class="location">
+            <div class="text">
+                <p><i class="fas fa-map-marker-alt"></i>Shop No 1, Shivaji Nagar</p>
+                <p>Near Shivaji Statue, Nanded, Maharashtra 431602</p>
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.6867650124397!2d77.31419067507661!3d19.169776982048843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd1d6895555555f%3A0x648a88c85ec45c0d!2sShivaji%20Statue%2C%20Shivaji%20Nagar%2C%20Nanded%2C%20Maharashtra%20431602!5e0!3m2!1sen!2sin!4v1709655149776!5m2!1sen!2sin"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Medicine Store. All rights reserved.
+            </div>
+            <div class="address">
+                123 Health Street, Medical District<br>
+                City, State 12345
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
